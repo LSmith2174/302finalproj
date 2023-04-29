@@ -1,0 +1,25 @@
+Challenge 04
+Laura Smith
+3/6/23
+
++20 code written out for a button that generates two random numbers
++20 code is on github
+
+(not sure if the rubric is for challenge 4 specifically or the project in general so this is for the challenge specifically)
+
+This week I learned the godot engine and what I can do in it by following and watching these tutorials: https://www.youtube.com/watch?v=xjB0H3BgzTI&list=PLJ690cxlZTgIsmdEhFufnB7O6KWoMS8M6. I then made the repository with github desktop so that I can push the game's files easier. I also set up where the board will be and made a roll button that generates two numbers between 1 and 6 which are the dice's roll. Next I will create the board and the player's pieces
+
+Time Log: 
+https://docs.google.com/spreadsheets/d/1_MOoZ8mk9RNK4eJgwsqSakDNhh0gO6wEt8PEPrPCdvw/edit?usp=sharing
+
+Repository:
+https://github.com/LSmith2174/302finalproj
+
+Code for button that generates a random roll: https://github.com/LSmith2174/302finalproj/blob/main/scripts/Button1.gd
+
+Next steps rubric:
+
++5 Board outline created in godot
++10 Player sprites design planned
++10 Board design planned out
++15 Progress is pushed to github everytime I work on it

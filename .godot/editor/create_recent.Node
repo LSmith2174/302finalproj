@@ -1,0 +1,16 @@
+TextureRect
+Sprite2D
+Node2D
+Camera2D
+MultiplayerSpawner
+VBoxContainer
+Button
+ColorRect
+CanvasLayer
+LineEdit
+Label
+CollisionShape2D
+MeshInstance2D
+CharacterBody2D
+MarginContainer
+PanelContainer

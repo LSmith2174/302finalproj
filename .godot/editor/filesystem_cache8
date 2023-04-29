@@ -1,0 +1,28 @@
+2a60927148abd1d33b818b535e306557
+::res://::1682708244
+CastoroTitling-Regular.ttf::FontFile::4385533654557989721::1682536640::1682536645::1::::<><>::
+default_env.tres::Environment::9028913119972014953::1682708030::0::1::::<><>::
+Empty-Gold-Coin-Transparent.png::CompressedTexture2D::3960954720436526027::1682606685::1682606688::1::::<><>::
+Game Cards.jpg::CompressedTexture2D::1541702498503190090::1682606087::1682606096::1::::<><>::
+game.tscn::PackedScene::5284537071573762451::1682708030::0::1::::<><>::uid://doid3sjkoadsi<>uid://v72u53hoarnm<>uid://b3qndl6wbql58<>uid://bwoyl0phmp31p
+gameboard.jpg::CompressedTexture2D::8158653997048480600::1682566966::1682566970::1::::<><>::
+icon.png::CompressedTexture2D::3758608425632378416::1678081964::1682436428::1::::<><>::
+logo.png::CompressedTexture2D::6032814022132198870::1682706095::1682706100::1::::<><>::
+MainMenuBG (1).jpg::CompressedTexture2D::3094186084474567384::1682545908::1682545920::1::::<><>::
+MainMenuBG (2).jpg::CompressedTexture2D::253363311122112430::1682551450::1682551459::1::::<><>::
+MainMenuBG (3).jpg::CompressedTexture2D::2226638435460450198::1682551606::1682551614::1::::<><>::
+MainMenuBG (4).jpg::CompressedTexture2D::8480553367624863739::1682551810::1682551815::1::::<><>::
+MainMenuBG (5).jpg::CompressedTexture2D::7667960857861698479::1682552046::1682552056::1::::<><>::
+MainMenuBG (6).jpg::CompressedTexture2D::9089030342018753722::1682552709::1682552716::1::::<><>::
+MainMenuBG.jpg::CompressedTexture2D::4550622146070247070::1682545311::1682545324::1::::<><>::
+MainMenuMap.png::CompressedTexture2D::8210933568748604015::1682707810::1682707816::1::::<><>::
+MainMenuTitle.jpg::CompressedTexture2D::8396824659316630704::1682707780::1682707816::1::::<><>::
+MainMenuWood.jpg::CompressedTexture2D::3463779736221524027::1682708244::1682708262::1::::<><>::
+main_scene.tscn::PackedScene::1304836376891266619::1682708030::0::1::::<><>::uid://doid3sjkoadsi<>uid://clljn6ei34qg3
+milestones-ljs.txt::TextFile::-1::1678088294::0::1::::<><>::
+::res://assets/::1678919575
+::res://scene/::1682708030
+Node2D.gd::GDScript::-1::1682546975::0::1::::<>Node2D<>::
+Node2D.tscn::PackedScene::5314551847427183716::1682708030::0::1::::<><>::res://scene/Node2D.gd<>uid://b3qndl6wbql58<>uid://drvqqfrb8u4bk
+player.tscn::PackedScene::5568198105760009168::1682708030::0::1::::<><>::res://.git/player.gd
+::res://scripts/::1682458991

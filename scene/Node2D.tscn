@@ -1,13 +1,167 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=15 format=3 uid="uid://chyn5lxkjmc4s"]
 
-[ext_resource path="res://scripts/Button1.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://scene/Node2D.gd" id="1_3dqv8"]
+[ext_resource type="FontFile" uid="uid://b3qndl6wbql58" path="res://CastoroTitling-Regular.ttf" id="2_dt5xg"]
+[ext_resource type="Texture2D" uid="uid://bpl47f2dd8lqx" path="res://MainMenuWood.jpg" id="2_x36wu"]
+[ext_resource type="Texture2D" uid="uid://cr7lth07urq11" path="res://logo.png" id="3_h76jb"]
+[ext_resource type="Texture2D" uid="uid://do8o4166ty048" path="res://MainMenuMap.png" id="4_ryfky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ua7b5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p7p5g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vslq8"]
+bg_color = Color(0.411765, 0.321569, 0.188235, 0.403922)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn83c"]
+bg_color = Color(0.465603, 0.310577, 0.132708, 0.596078)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnfub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsibc"]
+bg_color = Color(0.411765, 0.321569, 0.188235, 0.403922)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6fh1"]
+bg_color = Color(0.411765, 0.321569, 0.188235, 0.403922)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo2wj"]
+bg_color = Color(0.411765, 0.321569, 0.188235, 0.403922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr3tm"]
+bg_color = Color(0.411765, 0.321569, 0.188235, 0.403922)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_3dqv8")
 
-[node name="Button" type="Button" parent="."]
-margin_left = 288.0
-margin_top = 534.0
-margin_right = 450.0
-margin_bottom = 582.0
-text = "Roll!"
-script = ExtResource( 1 )
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1024.0
+offset_top = -768.0
+offset_right = 1024.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_x36wu")
+expand_mode = 2
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.369792
+anchor_top = -0.0462963
+anchor_right = 0.630208
+anchor_bottom = 0.416667
+grow_horizontal = 2
+size_flags_vertical = 0
+texture = ExtResource("3_h76jb")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.158333
+anchor_top = 0.0888889
+anchor_right = 0.841667
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_ryfky")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Main Menu" type="PanelContainer" parent="CanvasLayer/TextureRect3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.296
+anchor_top = 0.339431
+anchor_right = 0.719512
+anchor_bottom = 0.729675
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ua7b5")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextureRect3/Main Menu"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 63
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 62
+
+[node name="HostButt" type="Button" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_dt5xg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p7p5g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vslq8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vn83c")
+text = "Host"
+
+[node name="JoinButt" type="Button" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_dt5xg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dnfub")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qsibc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q6fh1")
+text = "Join"
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_dt5xg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jo2wj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fr3tm")
+placeholder_text = "Enter Room Code"
+alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer/HostButt" to="." method="_on_host_butt_pressed"]
+[connection signal="pressed" from="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer/JoinButt" to="." method="_on_join_butt_pressed"]
