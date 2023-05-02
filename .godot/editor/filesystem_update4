@@ -3,3 +3,6 @@ res://main_scene.tscn
 res://scene/Node2D.tscn
 res://scene/player.tscn
 res://game.tscn
+res://scene/Node2D.gd
+res://scene/main_scene.tscn
+res://scene/join_screen.tscn

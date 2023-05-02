@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dccubgal5kmvj"]
+
+[ext_resource type="Texture2D" uid="uid://bpl47f2dd8lqx" path="res://MainMenuWood.jpg" id="1_0oebx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 2048.0
+offset_bottom = 1536.0
+texture = ExtResource("1_0oebx")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 45.0
+offset_top = 37.0
+offset_right = -40.0
+offset_bottom = 299.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
