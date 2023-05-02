@@ -1,9 +1,9 @@
+Camera2D
+ColorRect
 GridContainer
 ParallaxBackground
 TileMap
-Camera2D
 CanvasLayer
-ColorRect
 TextureRect
 Sprite2D
 Node2D
