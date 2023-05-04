@@ -6,3 +6,6 @@ res://game.tscn
 res://scene/Node2D.gd
 res://scene/main_scene.tscn
 res://scene/join_screen.tscn
+res://scene/man_scene_control.tscn
+res://scene/join_screen.gd
+res://scene/main_scene.gd

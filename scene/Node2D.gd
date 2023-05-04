@@ -11,7 +11,7 @@ const MainPage = preload("res://scene/main_scene.tscn")
 
 @onready var main_menu = $"CanvasLayer/TextureRect3"
 @onready var title = $"CanvasLayer/TextureRect2"
-@onready var main_menuBG = $CanvasLayer/TextureRect
+@onready var main_menuBG = $ParallaxBackground/TextureRect
 #@onready var address_entry = $"../CanvasLayer/Main Menu/MarginContainer/VBoxContainer/RoomCode"
 
 const PORT = 4712
@@ -24,7 +24,7 @@ func _on_host_butt_pressed():
 	
 	enet_peer.create_server(PORT, 5)
 	multiplayer.multiplayer_peer = enet_peer
-	multiplayer.peer_connected.connect(add_player)
+	multiplayer.peer_connected.connect(join_board)
 	
 	add_board(multiplayer.get_unique_id())
 
@@ -32,23 +32,21 @@ func _on_host_butt_pressed():
 func _on_join_butt_pressed():
 	main_menu.hide()
 	title.hide()
-	main_menuBG.hide()
 	
 	enet_peer.create_client("localhost", PORT)
 	multiplayer.multiplayer_peer = enet_peer
 	
-	join_board(multiplayer.get_unique_id())
+	#join_board(multiplayer.get_unique_id())
 	
 func join_board(peer_id):
 	var screen = JoinScreen.instantiate()
 	screen.name = str(peer_id)
 	add_child(screen)
 
-func add_player(peer_id):
-	var player = Player.instantiate()
-	player.name = str(peer_id)
-	player.translate(Vector2(487, 875))
-	add_child(player)
+#func add_player(peer_id):
+#	var player = Player.instantiate()
+#	player.name = str(peer_id)
+#	add_child(player)
 
 func add_board(peer_id):
 	var board = MainPage.instantiate()

@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://75hfii5bl5nt"]
+[gd_scene load_steps=4 format=3 uid="uid://75hfii5bl5nt"]
 
 [ext_resource type="Texture2D" uid="uid://doid3sjkoadsi" path="res://gameboard.jpg" id="1_cofnq"]
+[ext_resource type="Script" path="res://scene/main_scene.gd" id="1_m4ljf"]
 [ext_resource type="PackedScene" uid="uid://clljn6ei34qg3" path="res://scene/player.tscn" id="2_hvxgb"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_m4ljf")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 follow_viewport_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+[node name="ColorRect5" type="ColorRect" parent="ParallaxBackground"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,62 +20,23 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.243137, 0.0431373, 0.0431373, 1)
 
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+[node name="Map" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
-anchors_preset = -1
-anchor_left = 0.171354
-anchor_top = 0.0625
-anchor_right = 0.828646
-anchor_bottom = 0.9375
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_cofnq")
-expand_mode = 1
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="GridContainer" type="GridContainer" parent="ParallaxBackground/TextureRect"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 6
+offset_left = 280.0
+offset_top = -144.0
+offset_right = 1641.0
+offset_bottom = 1218.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("1_cofnq")
+expand_mode = 4
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_hvxgb")]
 visible = false
-position = Vector2(487, 875)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_top = 1800.0
-offset_right = 1080.0
-offset_bottom = 3720.0
-color = Color(0.243137, 0.0431373, 0.0431373, 1)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(13, 1789)
-rotation = 0.872665
-anchor_mode = 0
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_top = -2532.0
-offset_right = 1080.0
-offset_bottom = -612.0
-color = Color(0.243137, 0.0431373, 0.0431373, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="."]
-offset_left = 2182.0
-offset_top = 1608.0
-offset_right = 3262.0
-offset_bottom = 3528.0
-color = Color(0.243137, 0.0431373, 0.0431373, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="."]
-offset_left = 2098.0
-offset_top = -2522.0
-offset_right = 3178.0
-offset_bottom = -602.0
-color = Color(0.243137, 0.0431373, 0.0431373, 1)
+position = Vector2(904, 808)
