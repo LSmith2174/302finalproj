@@ -17,6 +17,8 @@ const MainPage = preload("res://scene/main_scene.tscn")
 const PORT = 4712
 var enet_peer = ENetMultiplayerPeer.new()
 
+var player_list = [1]
+
 func _on_host_butt_pressed():
 	main_menu.hide()
 	title.hide()
@@ -27,6 +29,8 @@ func _on_host_butt_pressed():
 	multiplayer.peer_connected.connect(join_board)
 	
 	add_board(multiplayer.get_unique_id())
+	
+	
 
 
 func _on_join_butt_pressed():
@@ -36,11 +40,13 @@ func _on_join_butt_pressed():
 	enet_peer.create_client("localhost", PORT)
 	multiplayer.multiplayer_peer = enet_peer
 	
+	#player_list.add(multiplayer.get_unique_id())
 	#join_board(multiplayer.get_unique_id())
 	
 func join_board(peer_id):
 	var screen = JoinScreen.instantiate()
 	screen.name = str(peer_id)
+		
 	add_child(screen)
 
 #func add_player(peer_id):
@@ -52,6 +58,7 @@ func add_board(peer_id):
 	var board = MainPage.instantiate()
 	
 	board.name = str(peer_id)
+	set_multiplayer_authority(peer_id)
 	add_child(board)
 
 

@@ -12,6 +12,9 @@ func _ready():
 			Player_child = child
 		if child.name == 'CanvasLayer' && not is_multiplayer_authority():
 			child.visible = 0
+	
+	if not get_parent().is_multiplayer_authority():
+		visible = 0
 	pass # Replace with function body.
 
 

@@ -1,7 +1,8 @@
+Button
+Label
+VBoxContainer
 MultiplayerSynchronizer
 MultiplayerSpawner
-Button
-VBoxContainer
 ParallaxBackground
 SubViewport
 Control
@@ -15,7 +16,6 @@ TextureRect
 Sprite2D
 Node2D
 LineEdit
-Label
 CollisionShape2D
 MeshInstance2D
 CharacterBody2D
