@@ -40,4 +40,4 @@ expand_mode = 4
 stretch_mode = 5
 
 [node name="Player" parent="." instance=ExtResource("2_hvxgb")]
-position = Vector2(637, 788)
+position = Vector2(640, 784)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dccubgal5kmvj"]
+[gd_scene load_steps=6 format=3 uid="uid://dccubgal5kmvj"]
 
 [ext_resource type="Script" path="res://scene/join_screen.gd" id="1_45e8t"]
 [ext_resource type="PackedScene" uid="uid://clljn6ei34qg3" path="res://scene/player.tscn" id="2_7vd4n"]
 [ext_resource type="PackedScene" uid="uid://vjqvfrfgfgfn" path="res://scene/roll.tscn" id="2_yi666"]
+[ext_resource type="PackedScene" uid="uid://bebepkd1mpbeg" path="res://doubt_pass.tscn" id="3_lddlu"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rtir4"]
 properties/0/path = NodePath("Player:currentIndex")
@@ -64,6 +65,9 @@ layout_mode = 2
 text = "5"
 
 [node name="Roll" parent="CanvasLayer" instance=ExtResource("2_yi666")]
+
+[node name="DoubtPass" parent="CanvasLayer" instance=ExtResource("3_lddlu")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("2_7vd4n")]
 

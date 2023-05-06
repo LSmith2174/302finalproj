@@ -14,6 +14,9 @@ const MainPage = preload("res://scene/main_scene.tscn")
 @onready var main_menuBG = $ParallaxBackground/TextureRect
 #@onready var address_entry = $"../CanvasLayer/Main Menu/MarginContainer/VBoxContainer/RoomCode"
 
+signal playnum(playernum)
+var playernum = 0
+
 const PORT = 4712
 var enet_peer = ENetMultiplayerPeer.new()
 
@@ -40,14 +43,18 @@ func _on_join_butt_pressed():
 	enet_peer.create_client("localhost", PORT)
 	multiplayer.multiplayer_peer = enet_peer
 	
+	
 	#player_list.add(multiplayer.get_unique_id())
 	#join_board(multiplayer.get_unique_id())
 	
 func join_board(peer_id):
+	playernum += 1
 	var screen = JoinScreen.instantiate()
 	screen.name = str(peer_id)
-		
+	screen.playernum = playnum
 	add_child(screen)
+	
+	
 
 #func add_player(peer_id):
 #	var player = Player.instantiate()

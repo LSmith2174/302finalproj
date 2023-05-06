@@ -3,6 +3,7 @@ extends Node2D
 @onready var Player_child = $Player
 @onready var roll_scene = $CanvasLayer/Roll
 @onready var Canvas_layer = $CanvasLayer
+@export var playernum = 0
 
 
 func _enter_tree():
@@ -16,6 +17,18 @@ func _ready():
 	if not get_parent().is_multiplayer_authority():
 		visible = 0
 
+	match(playernum):
+		1:
+			Player_child.offset = Vector2(0, 0)
+			Player_child.scale = 0.5
+		2:
+			Player_child.offset = Vector2(0, -38)
+		3:
+			Player_child.offset = Vector2(-70, 30)
+		4:
+			Player_child.offset = Vector2(-70, 0)
+		_:
+			pass
 #	var rolls = get_node("Control")	
 #	roll_scene.move.connect("_on_control_move")
 	
