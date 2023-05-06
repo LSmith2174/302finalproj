@@ -1,5 +1,7 @@
 extends Control
 
+signal move(dice)
+
 @onready var RollButt = $roll_butt
 @onready var dice_num = $"lie or truth/dice_num"
 @onready var message = $"lie or truth/message"
@@ -33,54 +35,48 @@ func _on_roll_butt_pressed():
 		dice_num.text = "X"
 		decide_butts.hide()
 		ok_butt.show()
-	
-	pass
 
 func _on_ok_pressed():
 	decision.hide()
-	pass # Replace with function body.
 
 func _on_lie_pressed():
 	decision.hide()
 	decision_lie.show()
-	pass
 
 func _on_truth_pressed():
 	decision.hide()
-	pass
+	move.emit(dice)
 
 
 
 func _on_1_pressed():
 	dice = 1
 	decision_lie.hide()
-	pass # Replace with function body.
+	move.emit(dice)
 
 
 func _on_2_pressed():
 	dice = 2
 	decision_lie.hide()
-	pass # Replace with function body.
+	move.emit(dice)
 
 
 func _on_3_pressed():
 	dice = 3
 	decision_lie.hide()
-	pass # Replace with function body.
+	move.emit(dice)
 
 
 func _on_4_pressed():
 	dice = 4
 	decision_lie.hide()
-	pass # Replace with function body.
+	move.emit(dice)
 
 
 func _on_5_pressed():
 	dice = 5
 	decision_lie.hide()
-	pass # Replace with function body.
-
-
+	move.emit(dice)
 
 
 

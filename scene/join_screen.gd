@@ -1,23 +1,26 @@
 extends Node2D
 
-var Player_child
+@onready var Player_child = $Player
+@onready var roll_scene = $CanvasLayer/Roll
+@onready var Canvas_layer = $CanvasLayer
+
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for child in get_children():
-		if child.has_method("move_to_index"):
-			Player_child = child
-		if child.name == 'CanvasLayer' && not is_multiplayer_authority():
-			child.visible = 0
-	
+	if not is_multiplayer_authority():
+		Canvas_layer.visible = 0
+
 	if not get_parent().is_multiplayer_authority():
 		visible = 0
+
+#	var rolls = get_node("Control")	
+#	roll_scene.move.connect("_on_control_move")
+	
 	pass # Replace with function body.
-
-
+ 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,7 +28,7 @@ func _process(delta):
 
 
 func _on_one_button_down():
-	Player_child.move_to_index(1)
+	Player_child.move_to_index()
 	pass # Replace with function body.
 
 
@@ -46,4 +49,10 @@ func _on_four_button_down():
 
 func _on_five_button_down():
 	Player_child.move_to_index(5)
+	pass # Replace with function body.
+
+
+
+func _on_control_move(dice):
+	Player_child.move_to_index(dice)
 	pass # Replace with function body.

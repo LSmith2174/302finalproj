@@ -1,4 +1,6 @@
 Button
+GridContainer
+NavigationRegion2D
 Label
 VBoxContainer
 MultiplayerSynchronizer
@@ -9,7 +11,6 @@ Control
 AspectRatioContainer
 Camera2D
 ColorRect
-GridContainer
 TileMap
 CanvasLayer
 TextureRect
