@@ -10,8 +10,9 @@ properties/0/path = NodePath("Player:currentIndex")
 properties/0/spawn = true
 properties/0/sync = true
 
-[node name="Node2D" type="Node2D"]
+[node name="Node_2D" type="Node2D"]
 script = ExtResource("1_45e8t")
+playernum = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

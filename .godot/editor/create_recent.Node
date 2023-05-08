@@ -1,9 +1,10 @@
+MultiplayerSynchronizer
+TextureRect
 Button
 GridContainer
 NavigationRegion2D
 Label
 VBoxContainer
-MultiplayerSynchronizer
 MultiplayerSpawner
 ParallaxBackground
 SubViewport
@@ -13,7 +14,6 @@ Camera2D
 ColorRect
 TileMap
 CanvasLayer
-TextureRect
 Sprite2D
 Node2D
 LineEdit

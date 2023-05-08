@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://75hfii5bl5nt"]
+[gd_scene load_steps=9 format=3 uid="uid://75hfii5bl5nt"]
 
 [ext_resource type="Script" path="res://scene/main_scene.gd" id="1_m4ljf"]
 [ext_resource type="PackedScene" uid="uid://clljn6ei34qg3" path="res://scene/player.tscn" id="2_hvxgb"]
 [ext_resource type="Texture2D" uid="uid://3tqjgodqsi4l" path="res://Boardboard.png" id="2_soeth"]
+[ext_resource type="Texture2D" uid="uid://conu0yymfeoy5" path="res://stinky.png" id="4_ugwxx"]
+[ext_resource type="Texture2D" uid="uid://drdmu65gvdidq" path="res://emrich.png" id="5_t331o"]
+[ext_resource type="Texture2D" uid="uid://cf38t687opb43" path="res://rob.png" id="6_8nfcu"]
+[ext_resource type="Texture2D" uid="uid://cvcad64a6tds7" path="res://christian.png" id="7_yne23"]
+[ext_resource type="Texture2D" uid="uid://bs6yj002mwgvi" path="res://manas.png" id="8_eqbih"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_m4ljf")
@@ -41,3 +46,48 @@ stretch_mode = 5
 
 [node name="Player" parent="." instance=ExtResource("2_hvxgb")]
 position = Vector2(640, 784)
+
+[node name="andrew" type="TextureRect" parent="."]
+offset_left = 1523.78
+offset_top = 55.4374
+offset_right = 2207.78
+offset_bottom = 1233.44
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_ugwxx")
+flip_h = true
+
+[node name="Emrich" type="TextureRect" parent="."]
+offset_left = 223.248
+offset_top = 578.347
+offset_right = 907.248
+offset_bottom = 1756.35
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_t331o")
+
+[node name="Rob" type="TextureRect" parent="."]
+offset_left = 221.749
+offset_top = 172.305
+offset_right = 905.749
+offset_bottom = 1350.31
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_8nfcu")
+
+[node name="Christian" type="TextureRect" parent="."]
+offset_left = 1529.77
+offset_top = 388.062
+offset_right = 2213.77
+offset_bottom = 1566.06
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_yne23")
+flip_h = true
+
+[node name="Manas" type="TextureRect" parent="."]
+offset_left = 1529.77
+offset_top = 732.672
+offset_right = 2213.77
+offset_bottom = 1910.67
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_eqbih")
+flip_h = true
+
+[connection signal="playernum" from="." to="Player" method="_on_node_2d_playernum"]

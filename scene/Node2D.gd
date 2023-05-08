@@ -12,16 +12,22 @@ const MainPage = preload("res://scene/main_scene.tscn")
 @onready var main_menu = $"CanvasLayer/TextureRect3"
 @onready var title = $"CanvasLayer/TextureRect2"
 @onready var main_menuBG = $ParallaxBackground/TextureRect
-#@onready var address_entry = $"../CanvasLayer/Main Menu/MarginContainer/VBoxContainer/RoomCode"
-
-signal playnum(playernum)
-var playernum = 0
 
 const PORT = 4712
 var enet_peer = ENetMultiplayerPeer.new()
 
-var player_list = [1]
+# Player info, associate ID to data
+@export var player_info = {}
 
+func _player_disconnected(id):
+	player_info.erase(id) # Erase player from info.
+
+@rpc("call_remote") func register_player(info):
+	# Get the id of the RPC sender.
+	var id = multiplayer.get_remote_sender_id()
+	# Store the info
+	player_info[id] = info
+	
 func _on_host_butt_pressed():
 	main_menu.hide()
 	title.hide()
@@ -43,15 +49,12 @@ func _on_join_butt_pressed():
 	enet_peer.create_client("localhost", PORT)
 	multiplayer.multiplayer_peer = enet_peer
 	
-	
-	#player_list.add(multiplayer.get_unique_id())
 	#join_board(multiplayer.get_unique_id())
 	
 func join_board(peer_id):
-	playernum += 1
 	var screen = JoinScreen.instantiate()
 	screen.name = str(peer_id)
-	screen.playernum = playnum
+	rpc_id(peer_id, "register_player", screen)
 	add_child(screen)
 	
 	
@@ -65,7 +68,7 @@ func add_board(peer_id):
 	var board = MainPage.instantiate()
 	
 	board.name = str(peer_id)
-	set_multiplayer_authority(peer_id)
+	self.name = str(peer_id)
 	add_child(board)
 
 

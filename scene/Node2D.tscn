@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://chyn5lxkjmc4s"]
+[gd_scene load_steps=16 format=3 uid="uid://chyn5lxkjmc4s"]
 
 [ext_resource type="Script" path="res://scene/Node2D.gd" id="1_3dqv8"]
 [ext_resource type="FontFile" uid="uid://b3qndl6wbql58" path="res://CastoroTitling-Regular.ttf" id="2_dt5xg"]
@@ -49,6 +49,11 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_t2wg8"]
+properties/0/path = NodePath(".:player_info")
+properties/0/spawn = true
+properties/0/sync = true
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3dqv8")
@@ -164,6 +169,9 @@ alignment = 1
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scene/join_screen.tscn", "res://scene/player.tscn")
 spawn_path = NodePath("..")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_t2wg8")
 
 [connection signal="pressed" from="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer/HostButt" to="." method="_on_host_butt_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer/JoinButt" to="." method="_on_join_butt_pressed"]

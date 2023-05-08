@@ -33,7 +33,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_268e1")
-dice = 3
 
 [node name="roll_butt" type="Button" parent="."]
 custom_minimum_size = Vector2(250, 150)

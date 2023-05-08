@@ -12,3 +12,4 @@ res://scene/join_screen.gd
 res://doubt_pass.tscn
 res://doubt_pass.gd
 res://scene/Node2D.gd
+res://scene/main_scene.gd
