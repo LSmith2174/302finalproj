@@ -17,16 +17,16 @@ const PORT = 4712
 var enet_peer = ENetMultiplayerPeer.new()
 
 # Player info, associate ID to data
-@export var player_info = {}
+#@export var player_info = {}
 
-func _player_disconnected(id):
-	player_info.erase(id) # Erase player from info.
+#func _player_disconnected(id):
+#	player_info.erase(id) # Erase player from info.
 
-@rpc("call_remote") func register_player(info):
+#@rpc("call_remote") func register_player(info):
 	# Get the id of the RPC sender.
-	var id = multiplayer.get_remote_sender_id()
+#	var id = multiplayer.get_remote_sender_id()
 	# Store the info
-	player_info[id] = info
+#	player_info[id] = info
 	
 func _on_host_butt_pressed():
 	main_menu.hide()
@@ -54,7 +54,7 @@ func _on_join_butt_pressed():
 func join_board(peer_id):
 	var screen = JoinScreen.instantiate()
 	screen.name = str(peer_id)
-	rpc_id(peer_id, "register_player", screen)
+	#rpc_id(peer_id, "register_player", screen)
 	add_child(screen)
 	
 	
@@ -68,7 +68,7 @@ func add_board(peer_id):
 	var board = MainPage.instantiate()
 	
 	board.name = str(peer_id)
-	self.name = str(peer_id)
+	set_multiplayer_authority(peer_id)
 	add_child(board)
 
 

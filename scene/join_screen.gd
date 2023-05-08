@@ -15,10 +15,10 @@ func _ready():
 	if not is_multiplayer_authority():
 		Canvas_layer.visible = 0
 
-	if not get_parent().name == "1":
+	if not get_parent().is_multiplayer_authority():
 		visible = 0
 		
-	move_offset()
+	#move_offset()
 
 #	var rolls = get_node("Control")	
 #	roll_scene.move.connect("_on_control_move")
@@ -35,5 +35,5 @@ func _process(delta):
 	pass
 
 func _on_control_move(dice):
-	Player_child.move_to_index(dice + 4)
+	Player_child.move_to_index(dice)
 	pass # Replace with function body.

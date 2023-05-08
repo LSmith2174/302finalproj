@@ -65,10 +65,10 @@ text = "4"
 layout_mode = 2
 text = "5"
 
-[node name="Roll" parent="CanvasLayer" instance=ExtResource("2_yi666")]
-
 [node name="DoubtPass" parent="CanvasLayer" instance=ExtResource("3_lddlu")]
 visible = false
+
+[node name="Roll" parent="CanvasLayer" instance=ExtResource("2_yi666")]
 
 [node name="Player" parent="." instance=ExtResource("2_7vd4n")]
 
