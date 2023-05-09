@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://75hfii5bl5nt"]
+[gd_scene load_steps=8 format=3 uid="uid://75hfii5bl5nt"]
 
 [ext_resource type="Script" path="res://scene/main_scene.gd" id="1_m4ljf"]
-[ext_resource type="PackedScene" uid="uid://clljn6ei34qg3" path="res://scene/player.tscn" id="2_hvxgb"]
 [ext_resource type="Texture2D" uid="uid://3tqjgodqsi4l" path="res://Boardboard.png" id="2_soeth"]
 [ext_resource type="Texture2D" uid="uid://conu0yymfeoy5" path="res://stinky.png" id="4_ugwxx"]
 [ext_resource type="Texture2D" uid="uid://drdmu65gvdidq" path="res://emrich.png" id="5_t331o"]
@@ -9,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://cvcad64a6tds7" path="res://christian.png" id="7_yne23"]
 [ext_resource type="Texture2D" uid="uid://bs6yj002mwgvi" path="res://manas.png" id="8_eqbih"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
+visible = false
 script = ExtResource("1_m4ljf")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-follow_viewport_enabled = true
+[node name="board" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="ColorRect5" type="ColorRect" parent="ParallaxBackground"]
+[node name="board bg" type="ColorRect" parent="board"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,69 +25,99 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.243137, 0.0431373, 0.0431373, 1)
 
-[node name="Map" type="TextureRect" parent="."]
+[node name="Map" type="TextureRect" parent="board"]
 custom_minimum_size = Vector2(100, 100)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 85.0
-offset_top = -335.0
-offset_right = 1835.0
-offset_bottom = 1415.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = -323.0
+offset_right = 96.0
+offset_bottom = 517.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+scale = Vector2(0.9, 0.9)
+size_flags_horizontal = 6
+size_flags_vertical = 6
 texture = ExtResource("2_soeth")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Player" parent="." instance=ExtResource("2_hvxgb")]
-position = Vector2(640, 784)
+[node name="Rob" type="TextureRect" parent="board/Map"]
+offset_left = 139.722
+offset_top = 550.339
+offset_right = 823.722
+offset_bottom = 1728.34
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_8nfcu")
 
-[node name="andrew" type="TextureRect" parent="."]
-offset_left = 1523.78
-offset_top = 55.4374
-offset_right = 2207.78
-offset_bottom = 1233.44
+[node name="andrew" type="TextureRect" parent="board/Map"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -530.0
+offset_right = 364.0
+offset_bottom = 648.0
+grow_horizontal = 0
+grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_ugwxx")
 flip_h = true
 
-[node name="Emrich" type="TextureRect" parent="."]
-offset_left = 223.248
-offset_top = 578.347
-offset_right = 907.248
-offset_bottom = 1756.35
+[node name="Emrich" type="TextureRect" parent="board/Map"]
+offset_left = 141.386
+offset_top = 1001.5
+offset_right = 825.386
+offset_bottom = 2179.5
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_t331o")
 
-[node name="Rob" type="TextureRect" parent="."]
-offset_left = 221.749
-offset_top = 172.305
-offset_right = 905.749
-offset_bottom = 1350.31
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_8nfcu")
-
-[node name="Christian" type="TextureRect" parent="."]
-offset_left = 1529.77
-offset_top = 388.062
-offset_right = 2213.77
-offset_bottom = 1566.06
+[node name="Christian" type="TextureRect" parent="board/Map"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -147.778
+offset_right = 364.0
+offset_bottom = 1030.22
+grow_horizontal = 0
+grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("7_yne23")
 flip_h = true
 
-[node name="Manas" type="TextureRect" parent="."]
-offset_left = 1529.77
-offset_top = 732.672
-offset_right = 2213.77
-offset_bottom = 1910.67
+[node name="Manas" type="TextureRect" parent="board/Map"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = 234.445
+offset_right = 364.0
+offset_bottom = 1412.44
+grow_horizontal = 0
+grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_eqbih")
 flip_h = true
 
-[connection signal="playernum" from="." to="Player" method="_on_node_2d_playernum"]
+[node name="Player-list" type="Control" parent="board"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="board"]
+_spawnable_scenes = PackedStringArray("res://scene/player.tscn")
+spawn_path = NodePath("../Map")

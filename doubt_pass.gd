@@ -16,15 +16,17 @@ func _ready():
 func _process(delta):
 	pass
 
+func start():
+	DPUI.show()
 
 func _on_doubt_pressed():
 	DPUI.hide()
 	Doubt = 1
 	DorP.emit(Doubt)
-	pass # Replace with function body.
+	
 
 
 func _on_pass_pressed():
 	DPUI.hide()
 	DorP.emit(Doubt)
-	pass # Replace with function body.
+	

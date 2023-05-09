@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://hdcvue8j3lwx"]
+
+[ext_resource type="Script" path="res://doubt_pass.gd" id="1_f8qje"]
+[ext_resource type="FontFile" uid="uid://b3qndl6wbql58" path="res://CastoroTitling-Regular.ttf" id="2_kke8a"]
+[ext_resource type="Script" path="res://message.gd" id="3_t6mcn"]
+[ext_resource type="Script" path="res://scene/roll_butt.gd" id="4_u0hd5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2vfi"]
+bg_color = Color(0.447059, 0.109804, 0.109804, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfkcx"]
+bg_color = Color(0.243137, 0.0431373, 0.0431373, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quf7k"]
+bg_color = Color(0.054902, 0.00392157, 0.00392157, 1)
+corner_radius_top_left = 45
+corner_radius_top_right = 45
+corner_radius_bottom_right = 45
+corner_radius_bottom_left = 45
+
+[node name="DoubtPass" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f8qje")
+
+[node name="Doubt or Pass" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.5
+offset_top = -245.5
+offset_right = 242.5
+offset_bottom = 245.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(250, 250)
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="message" type="Label" parent="Doubt or Pass"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kke8a")
+theme_override_font_sizes/font_size = 45
+text = "Do you doubt what they rolled or do you trust them and let the roll pass?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_t6mcn")
+
+[node name="DPbuttons" type="VBoxContainer" parent="Doubt or Pass"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="doubt" type="Button" parent="Doubt or Pass/DPbuttons"]
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kke8a")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_t2vfi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dfkcx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_quf7k")
+text = "Doubt"
+script = ExtResource("4_u0hd5")
+
+[node name="pass" type="Button" parent="Doubt or Pass/DPbuttons"]
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kke8a")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_t2vfi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dfkcx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_quf7k")
+text = "Pass"
+script = ExtResource("4_u0hd5")
+
+[connection signal="pressed" from="Doubt or Pass/DPbuttons/doubt" to="." method="_on_doubt_pressed"]
+[connection signal="pressed" from="Doubt or Pass/DPbuttons/pass" to="." method="_on_pass_pressed"]

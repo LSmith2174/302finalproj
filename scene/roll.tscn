@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://vjqvfrfgfgfn"]
+[gd_scene load_steps=8 format=3 uid="uid://vjqvfrfgfgfn"]
 
 [ext_resource type="Script" path="res://scene/roll.gd" id="1_268e1"]
 [ext_resource type="FontFile" uid="uid://b3qndl6wbql58" path="res://CastoroTitling-Regular.ttf" id="1_ci6b1"]
 [ext_resource type="Script" path="res://scene/roll_butt.gd" id="2_yhk6v"]
+[ext_resource type="PackedScene" uid="uid://hdcvue8j3lwx" path="res://scene/doubt_pass.tscn" id="4_0e3pj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cu1v"]
 bg_color = Color(0.447059, 0.109804, 0.109804, 1)
@@ -35,6 +36,7 @@ grow_vertical = 2
 script = ExtResource("1_268e1")
 
 [node name="roll_butt" type="Button" parent="."]
+visible = false
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 1
 anchors_preset = 8
@@ -220,6 +222,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ykvos")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bcbhw")
 text = "5"
 script = ExtResource("2_yhk6v")
+
+[node name="DoubtPass" parent="." instance=ExtResource("4_0e3pj")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="roll_butt" to="." method="_on_roll_butt_pressed"]
 [connection signal="pressed" from="roll_butt" to="roll_butt" method="_on_pressed"]

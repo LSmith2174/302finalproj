@@ -13,3 +13,7 @@ res://doubt_pass.tscn
 res://doubt_pass.gd
 res://scene/Node2D.gd
 res://scene/main_scene.gd
+res://scene/Main01.tscn
+res://scene/doubt_pass.tscn
+res://game.gd
+res://scene/game.tscn

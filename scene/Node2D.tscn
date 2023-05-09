@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bpl47f2dd8lqx" path="res://MainMenuWood.jpg" id="2_x36wu"]
 [ext_resource type="Texture2D" uid="uid://cr7lth07urq11" path="res://logo.png" id="3_h76jb"]
 [ext_resource type="Texture2D" uid="uid://do8o4166ty048" path="res://MainMenuMap.png" id="4_ryfky"]
+[ext_resource type="PackedScene" uid="uid://bgfi164oa4i6m" path="res://scene/game.tscn" id="6_o1ow7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ua7b5"]
 
@@ -19,6 +20,16 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn83c"]
 bg_color = Color(0.465603, 0.310577, 0.132708, 0.596078)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo2wj"]
+bg_color = Color(0.411765, 0.321569, 0.188235, 0.403922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr3tm"]
+bg_color = Color(0.411765, 0.321569, 0.188235, 0.403922)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -40,22 +51,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jo2wj"]
-bg_color = Color(0.411765, 0.321569, 0.188235, 0.403922)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr3tm"]
-bg_color = Color(0.411765, 0.321569, 0.188235, 0.403922)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_t2wg8"]
-properties/0/path = NodePath(".:player_info")
-properties/0/spawn = true
-properties/0/sync = true
-
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_3dqv8")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -73,10 +69,10 @@ texture = ExtResource("2_x36wu")
 expand_mode = 2
 stretch_mode = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="main menu" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect2" type="TextureRect" parent="main menu"]
 anchors_preset = -1
 anchor_left = 0.369792
 anchor_top = -0.0462963
@@ -87,7 +83,7 @@ size_flags_vertical = 0
 texture = ExtResource("3_h76jb")
 expand_mode = 3
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect3" type="TextureRect" parent="main menu"]
 anchors_preset = -1
 anchor_left = 0.158333
 anchor_top = 0.0888889
@@ -101,19 +97,19 @@ texture = ExtResource("4_ryfky")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Main Menu" type="PanelContainer" parent="CanvasLayer/TextureRect3"]
+[node name="Main Menu" type="PanelContainer" parent="main menu/TextureRect3"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.296
-anchor_top = 0.339431
-anchor_right = 0.719512
-anchor_bottom = 0.729675
+anchor_left = 0.300305
+anchor_top = 0.315041
+anchor_right = 0.723817
+anchor_bottom = 0.705285
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ua7b5")
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextureRect3/Main Menu"]
+[node name="MarginContainer" type="MarginContainer" parent="main menu/TextureRect3/Main Menu"]
 layout_mode = 2
 size_flags_stretch_ratio = 5.0
 theme_override_constants/margin_left = 30
@@ -121,19 +117,13 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer"]
+[node name="Buttons" type="VBoxContainer" parent="main menu/TextureRect3/Main Menu/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 0
+theme_override_constants/separation = 31
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_constants/separation = 59
-
-[node name="HostButt" type="Button" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer"]
+[node name="HostButt" type="Button" parent="main menu/TextureRect3/Main Menu/MarginContainer/Buttons"]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_vertical = 3
@@ -144,7 +134,17 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vslq8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vn83c")
 text = "Host"
 
-[node name="JoinButt" type="Button" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer"]
+[node name="name" type="LineEdit" parent="main menu/TextureRect3/Main Menu/MarginContainer/Buttons"]
+custom_minimum_size = Vector2(25, 50)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_dt5xg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jo2wj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fr3tm")
+placeholder_text = "Name"
+alignment = 1
+
+[node name="JoinButt" type="Button" parent="main menu/TextureRect3/Main Menu/MarginContainer/Buttons"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 4
@@ -155,23 +155,55 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_qsibc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_q6fh1")
 text = "Join"
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer"]
+[node name="Join Info" type="MarginContainer" parent="main menu/TextureRect3/Main Menu/MarginContainer"]
 visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main menu/TextureRect3/Main Menu/MarginContainer/Join Info"]
+layout_mode = 2
+theme_override_constants/separation = 101
+
+[node name="host name" type="LineEdit" parent="main menu/TextureRect3/Main Menu/MarginContainer/Join Info/VBoxContainer"]
 custom_minimum_size = Vector2(25, 50)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_dt5xg")
+theme_override_font_sizes/font_size = 38
 theme_override_styles/normal = SubResource("StyleBoxFlat_jo2wj")
 theme_override_styles/focus = SubResource("StyleBoxFlat_fr3tm")
-placeholder_text = "Enter Room Code"
+text = "LOCALHOST"
+placeholder_text = "Host Name"
 alignment = 1
 
+[node name="connect butt" type="Button" parent="main menu/TextureRect3/Main Menu/MarginContainer/Join Info/VBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_dt5xg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p7p5g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vslq8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vn83c")
+text = "Connect"
+
+[node name="disconnect" type="Button" parent="main menu"]
+visible = false
+offset_top = -2.0
+offset_right = 100.0
+offset_bottom = 48.0
+text = "Disconnect"
+
+[node name="game" parent="." instance=ExtResource("6_o1ow7")]
+
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://scene/join_screen.tscn", "res://scene/player.tscn")
+_spawnable_scenes = PackedStringArray("res://scene/player.tscn")
 spawn_path = NodePath("..")
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_t2wg8")
-
-[connection signal="pressed" from="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer/HostButt" to="." method="_on_host_butt_pressed"]
-[connection signal="pressed" from="CanvasLayer/TextureRect3/Main Menu/MarginContainer/VBoxContainer2/VBoxContainer/JoinButt" to="." method="_on_join_butt_pressed"]
+[connection signal="pressed" from="main menu/TextureRect3/Main Menu/MarginContainer/Buttons/HostButt" to="." method="_on_host_butt_pressed"]
+[connection signal="pressed" from="main menu/TextureRect3/Main Menu/MarginContainer/Buttons/JoinButt" to="." method="_on_join_butt_pressed"]
+[connection signal="pressed" from="main menu/TextureRect3/Main Menu/MarginContainer/Join Info/VBoxContainer/connect butt" to="." method="_on_connect_butt_pressed"]
+[connection signal="pressed" from="main menu/disconnect" to="." method="_on_disconnect_pressed"]

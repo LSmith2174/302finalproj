@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgfi164oa4i6m"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_thphl"]
+[ext_resource type="Texture2D" uid="uid://bpl47f2dd8lqx" path="res://MainMenuWood.jpg" id="2_w2r6o"]
+[ext_resource type="PackedScene" uid="uid://75hfii5bl5nt" path="res://scene/main_scene.tscn" id="3_e6gra"]
+[ext_resource type="PackedScene" uid="uid://dccubgal5kmvj" path="res://scene/join_screen.tscn" id="4_n7v6x"]
+
+[node name="game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_thphl")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_w2r6o")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="Main" parent="." instance=ExtResource("3_e6gra")]
+
+[node name="join" parent="." instance=ExtResource("4_n7v6x")]
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="roll" from="join" to="." method="_on_join_roll"]

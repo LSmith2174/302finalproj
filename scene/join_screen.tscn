@@ -1,20 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dccubgal5kmvj"]
+[gd_scene load_steps=4 format=3 uid="uid://dccubgal5kmvj"]
 
 [ext_resource type="Script" path="res://scene/join_screen.gd" id="1_45e8t"]
-[ext_resource type="PackedScene" uid="uid://clljn6ei34qg3" path="res://scene/player.tscn" id="2_7vd4n"]
 [ext_resource type="PackedScene" uid="uid://vjqvfrfgfgfn" path="res://scene/roll.tscn" id="2_yi666"]
-[ext_resource type="PackedScene" uid="uid://bebepkd1mpbeg" path="res://doubt_pass.tscn" id="3_lddlu"]
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rtir4"]
-properties/0/path = NodePath("Player:currentIndex")
-properties/0/spawn = true
-properties/0/sync = true
+[ext_resource type="PackedScene" uid="uid://hdcvue8j3lwx" path="res://scene/doubt_pass.tscn" id="3_fhln8"]
 
 [node name="Node_2D" type="Node2D"]
 script = ExtResource("1_45e8t")
 playernum = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -29,57 +24,12 @@ grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -9.0
-offset_top = -85.5
-offset_right = 9.0
-offset_bottom = 85.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(15.6198, 3.16801)
-
-[node name="one" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-text = "1"
-
-[node name="two" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "2"
-
-[node name="three" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "3"
-
-[node name="four" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "4"
-
-[node name="five" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "5"
-
-[node name="DoubtPass" parent="CanvasLayer" instance=ExtResource("3_lddlu")]
-visible = false
-
 [node name="Roll" parent="CanvasLayer" instance=ExtResource("2_yi666")]
+visible = false
 
-[node name="Player" parent="." instance=ExtResource("2_7vd4n")]
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_rtir4")
+[node name="DoubtPass" parent="CanvasLayer" instance=ExtResource("3_fhln8")]
+visible = false
 
 [connection signal="ready" from="CanvasLayer" to="." method="_on_canvas_layer_ready"]
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/one" to="." method="_on_one_button_down"]
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/two" to="." method="_on_two_button_down"]
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/three" to="." method="_on_three_button_down"]
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/four" to="." method="_on_four_button_down"]
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/five" to="." method="_on_five_button_down"]
 [connection signal="hidden" from="CanvasLayer/Roll" to="." method="_on_control_hidden"]
 [connection signal="move" from="CanvasLayer/Roll" to="." method="_on_control_move"]
