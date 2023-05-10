@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqsvnakf6dxko"]
+
+[ext_resource type="Texture2D" uid="uid://df2d05niei3xh" path="res://orange.png" id="1_dudt3"]
+[ext_resource type="Texture2D" uid="uid://csl7ok8cirwse" path="res://rpspic2.png" id="2_0ijic"]
+[ext_resource type="Texture2D" uid="uid://b7pnwts4rxggj" path="res://rpspic3.png" id="3_lgbwt"]
+[ext_resource type="Texture2D" uid="uid://cuxrdxa1ku46r" path="res://rpsr.png" id="4_8crna"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Orange" type="Sprite2D" parent="Control/Label"]
+show_behind_parent = true
+position = Vector2(580.25, 325)
+scale = Vector2(1.7458, 1.63131)
+texture = ExtResource("1_dudt3")
+
+[node name="Rpspic2" type="Sprite2D" parent="Control/Label"]
+position = Vector2(254, 288)
+scale = Vector2(1.8705, 1.83908)
+texture = ExtResource("2_0ijic")
+
+[node name="Rpspic3" type="Sprite2D" parent="Control/Label"]
+position = Vector2(894.5, 288.125)
+scale = Vector2(1.90441, 1.83764)
+texture = ExtResource("3_lgbwt")
+
+[node name="Rpsr" type="Sprite2D" parent="Control/Label"]
+position = Vector2(574.375, 288)
+scale = Vector2(2.125, 1.81818)
+texture = ExtResource("4_8crna")
