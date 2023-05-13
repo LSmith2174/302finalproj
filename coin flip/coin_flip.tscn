@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqwcptd5abdsd"]
+
+[ext_resource type="Texture2D" uid="uid://2263wgnu5dk0" path="res://tail_pic.png" id="1_1smuf"]
+[ext_resource type="Script" path="res://coin_flip.gd" id="1_2u0gr"]
+[ext_resource type="Texture2D" uid="uid://bitveajf1vp0s" path="res://head_pic.png" id="2_g3l50"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2u0gr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 112.0
+offset_top = 374.0
+offset_right = 212.0
+offset_bottom = 580.0
+
+[node name="T_choice" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "TAIL
+"
+
+[node name="H_choice" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+text = "HEAD
+"
+
+[node name="tail" type="TextureRect" parent="."]
+visible = false
+offset_left = 7.0
+offset_top = 11.0
+offset_right = 304.0
+offset_bottom = 313.0
+texture = ExtResource("1_1smuf")
+
+[node name="head" type="TextureRect" parent="."]
+visible = false
+offset_left = 6.0
+offset_top = 10.0
+offset_right = 303.0
+offset_bottom = 312.0
+texture = ExtResource("2_g3l50")
+
+[node name="result_show_h_or_t" type="Label" parent="."]
+visible = false
+offset_left = 37.0
+offset_top = 400.0
+offset_right = 292.0
+offset_bottom = 560.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/T_choice" to="." method="_on_t_choice_pressed"]
+[connection signal="pressed" from="VBoxContainer/H_choice" to="." method="_on_h_choice_pressed"]

@@ -1,0 +1,128 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhc344kjixy21"]
+
+[ext_resource type="Script" path="res://rpschoose.gd" id="1_l6wkk"]
+[ext_resource type="Texture2D" uid="uid://csl7ok8cirwse" path="res://rpspic2.png" id="2_xs66w"]
+[ext_resource type="Texture2D" uid="uid://b7pnwts4rxggj" path="res://rpspic3.png" id="3_6wr08"]
+[ext_resource type="Texture2D" uid="uid://cuxrdxa1ku46r" path="res://rpsr.png" id="4_nwbe7"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l6wkk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 325.0
+offset_bottom = 998.0
+scale = Vector2(0.5, 0.5)
+
+[node name="paper" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣤⣤⣼⠃⠀⢹⣇⣀⣀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⠀⠀⢹⠀⠀⢸⡟⠁⠙⣧⠀⠀⠀⠀⠀
+⠀⠀⠀⣴⠶⠶⣿⠀⠀⢸⠀⠀⢸⡇⠀⠀⣿⠀⠀⠀⠀⠀
+⠀⠀⢰⡇⠀⠀⣿⠀⠀⢸⠀⠀⢸⡇⠀⠀⣿⠀⠀⠀⠀⠀
+⠀⠀⢸⡇⠀⠀⣿⠀⠀⢸⠀⠀⢸⡇⠀⠀⣿⡴⠞⢻⠀⠀
+⠀⠀⢸⡇⠀⠀⣿⠀⢀⣸⣀⠀⢸⡇⠀⠀⣿⠁⠀⢸⠀⠀
+⠀⠀⢸⡇⠀⠒⠛⠂⠈⠉⠉⠀⠛⠛⠁⠀⣿⠀⠀⢸⠀⠀
+⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⡿⠀⠀⢸⠀⠀
+⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⣰⠞⠉⠁⠀⠀⠀⢸⠀⠀
+⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀⣸⠃⠀⠀⠀⠀⠀⠀⣼⠀⠀
+⠀⠀⠀⢻⡄⠀⠀⠀⠀⠀⠀⠛⠀⠀⠀⠀⠀⠀⢰⠏⠀⠀
+⠀⠀⠀⠀⠻⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠳⣤⣀⠀⠀⠀⠀⢀⣀⡴⠞⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀
+"
+
+[node name="scissor" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(5, -10)
+layout_mode = 2
+text = "
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠁⠈⢻⠀⠀⣀⣤⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⢸⠀⣸⠃⠀⢹⡆⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⢸⢀⡏⠀⠀⣼⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⢸⣸⠁⠀⢠⡇⢀⠀⠀⠀
+⠀⠀⠀⢀⣀⣀⣴⠖⠲⣿⠀⠀⢸⡏⠀⠀⣼⠟⠉⡇⠀⠀
+⠀⠀⢰⡏⠀⠘⡇⠀⠀⣿⠀⢀⣸⣁⠀⢰⡇⠀⠀⡇⠀⠀
+⠀⠀⢸⡇⠀⠀⡇⠀⠀⣿⠀⠀⠀⠀⠀⢸⡇⠀⠀⡇⠀⠀
+⠀⠀⢸⣧⣀⣴⢷⣄⣠⠟⠀⠀⢀⣤⠶⠚⠃⠀⠀⡇⠀⠀
+⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⣰⠏⠀⠀⠀⠀⠀⠀⡇⠀⠀
+⠀⠀⠈⣧⠀⠀⠀⠀⠀⠀⠀⡏⠀⠀⠀⠀⠀⠀⣸⠃⠀⠀
+⠀⠀⠀⠘⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏⠀⠀⠀
+⠀⠀⠀⠀⠈⠳⣤⣀⠀⠀⠀⠀⠀⠀⢀⣠⠞⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠉⠛⠒⠶⠶⠒⠛⠉⠀⠀⠀⠀⠀⠀⠀
+"
+
+[node name="rock" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "⠀⠀⠀⠀⠀⠀⢀⣤⣤⣀⣴⠶⢶⣴⠟⠉⠻⣦⡶⠶⣦⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢰⡏⠀⠀⢹⡇⢀⣀⣿⣀⣀⣀⣿⣀⣀⣸⣇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⡇⠀⠀⢸⡇⣿⠉⠉⠉⠉⠉⠉⠉⠉⠉⠙⢷⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣇⠀⠀⣼⡇⠈⠷⣤⣀⣀⣀⣀⣀⡀⠀⠀⢸⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⡏⠛⠛⠉⠻⠶⠾⠛⢻⣿⠟⠋⠉⠁⠀⠀⢸⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⢠⡟⠁⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠸⡇⠀⠀⠀⠀⠀⠀⣾⠁⠀⠀⠀⠀⠀⠀⠀⣸⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢻⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⢻⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡟⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠙⠷⣤⣀⠀⠀⠀⠀⠀⣀⣤⠾⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+"
+
+[node name="paper_pic" type="TextureRect" parent="."]
+visible = false
+offset_left = 32.0
+offset_top = 136.0
+offset_right = 171.0
+offset_bottom = 310.0
+texture = ExtResource("3_6wr08")
+
+[node name="rock_pic" type="TextureRect" parent="."]
+visible = false
+offset_left = 32.0
+offset_top = 136.0
+offset_right = 168.0
+offset_bottom = 312.0
+texture = ExtResource("4_nwbe7")
+
+[node name="scissor_pic" type="TextureRect" parent="."]
+visible = false
+offset_left = 32.0
+offset_top = 136.0
+offset_right = 171.0
+offset_bottom = 310.0
+texture = ExtResource("2_xs66w")
+
+[node name="paper_pic2" type="TextureRect" parent="."]
+visible = false
+offset_left = 208.0
+offset_top = 136.0
+offset_right = 347.0
+offset_bottom = 310.0
+texture = ExtResource("3_6wr08")
+
+[node name="rock_pic2" type="TextureRect" parent="."]
+visible = false
+offset_left = 208.0
+offset_top = 136.0
+offset_right = 344.0
+offset_bottom = 312.0
+texture = ExtResource("4_nwbe7")
+
+[node name="scissor_pic2" type="TextureRect" parent="."]
+visible = false
+offset_left = 208.0
+offset_top = 136.0
+offset_right = 347.0
+offset_bottom = 310.0
+texture = ExtResource("2_xs66w")
+
+[node name="result_show" type="Label" parent="."]
+visible = false
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 280.0
+offset_bottom = 160.0
+
+[connection signal="pressed" from="VBoxContainer/paper" to="." method="_on_paper_pressed"]
+[connection signal="pressed" from="VBoxContainer/scissor" to="." method="_on_scissor_pressed"]
+[connection signal="pressed" from="VBoxContainer/rock" to="." method="_on_rock_pressed"]
