@@ -1,22 +1,19 @@
 extends Node2D
 
-signal playernum(numplayer)
+var player = preload("res://scene/player.tscn") #preload's player token
 
-
-
-var player = preload("res://scene/player.tscn")
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
-func start():
+func start(): #makes the board visible
 	if is_multiplayer_authority():
 		visible = 1
 		$board.visible = 1
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass
 
+# adds a player child to the player list child node to keep track of them. Name them the id
 func add_player(id, num):
 	var play = player.instantiate()
 	play.name = id

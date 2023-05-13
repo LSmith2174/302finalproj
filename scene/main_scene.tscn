@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bs6yj002mwgvi" path="res://manas.png" id="8_eqbih"]
 
 [node name="Main" type="Node2D"]
-visible = false
 script = ExtResource("1_m4ljf")
 
 [node name="board" type="CanvasLayer" parent="."]
@@ -44,6 +43,7 @@ expand_mode = 4
 stretch_mode = 5
 
 [node name="Rob" type="TextureRect" parent="board/Map"]
+layout_mode = 0
 offset_left = 139.722
 offset_top = 550.339
 offset_right = 823.722
@@ -69,6 +69,7 @@ texture = ExtResource("4_ugwxx")
 flip_h = true
 
 [node name="Emrich" type="TextureRect" parent="board/Map"]
+layout_mode = 0
 offset_left = 141.386
 offset_top = 1001.5
 offset_right = 825.386
